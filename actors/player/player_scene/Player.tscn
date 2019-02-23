@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://actors/player/player_script/player.gd" type="Script" id=1]
+[ext_resource path="res://art/Spaceship_art_pack_larger/Blue/Animation/1.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 30.0211
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Body" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+
+[node name="Weapon" type="Position2D" parent="." index="3"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="WeaponInformation" type="Node" parent="Weapon" index="0"]
+
+[node name="PlayerInputCommunicator" type="Node" parent="." index="4"]
+
+[node name="InputHandler" type="Node" parent="." index="5"]
+
+[node name="BodyStateMachine" type="Node" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="Idle" type="Node" parent="BodyStateMachine" index="0"]
+
+[node name="Move" type="Node" parent="BodyStateMachine" index="1"]
+
+[node name="Stagger" type="Node" parent="BodyStateMachine" index="2"]
+
+[node name="Dead" type="Node" parent="BodyStateMachine" index="3"]
+
+[node name="Health" type="Node" parent="." index="7"]
+
+[node name="Purse" type="Node" parent="." index="8"]
+
+

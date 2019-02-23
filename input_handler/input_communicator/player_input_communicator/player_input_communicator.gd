@@ -3,7 +3,7 @@ signal moved(move_direction)
 signal weapon_changed(weapon_name)
 signal talked(talk)
 signal saved(save)
-signal shooted(shoot)
+signal shooted()
 
 func communicate_input(player_input):
 	communicate_movement_input_direction(player_input)
@@ -17,7 +17,7 @@ func communicate_movement_input_direction(player_input_data):
 	emit_signal("moved", movement_direction)
 
 func communicate_shoot_input(player_input_data):
-	emit_signal("shooted", player_input_data.shoot)
+	emit_signal("shooted") 
 
 func communicate_weapon_type_input(player_input_data):
 	if player_input_data.weapon_type_one:
