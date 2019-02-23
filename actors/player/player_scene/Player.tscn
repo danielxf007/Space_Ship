@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://actors/player/player_script/player.gd" type="Script" id=1]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Blue/Animation/1.png" type="Texture" id=2]
+[ext_resource path="res://weapons/weapon.gd" type="Script" id=3]
+[ext_resource path="res://weapons/weapon_information.gd" type="Script" id=4]
+[ext_resource path="res://input_handler/player_input_handler/player_input_handler.gd" type="Script" id=5]
+[ext_resource path="res://input_handler/input_communicator/player_input_communicator/player_input_communicator.gd" type="Script" id=6]
+[ext_resource path="res://actors/player/body_movement/body_state_machine/body_state_machine.gd" type="Script" id=7]
+[ext_resource path="res://actors/player/body_movement/states/motion/on_space/idle.gd" type="Script" id=8]
+[ext_resource path="res://actors/player/body_movement/states/motion/on_space/move.gd" type="Script" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -15,6 +22,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -29,39 +37,58 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+[node name="Weapon" type="Position2D" parent="." index="2"]
 
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-blend_times = [  ]
-
-[node name="Weapon" type="Position2D" parent="." index="3"]
-
+script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
+current_weapon = null
 
 [node name="WeaponInformation" type="Node" parent="Weapon" index="0"]
 
+script = ExtResource( 4 )
+
+[node name="ShootCoolDown" type="Timer" parent="Weapon" index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="ReloadCoolDown" type="Timer" parent="Weapon" index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="InputHandler" type="Node" parent="." index="3"]
+
+script = ExtResource( 5 )
+
 [node name="PlayerInputCommunicator" type="Node" parent="." index="4"]
 
-[node name="InputHandler" type="Node" parent="." index="5"]
+script = ExtResource( 6 )
 
-[node name="BodyStateMachine" type="Node" parent="." index="6"]
+[node name="BodyStateMachine" type="Node" parent="." index="5"]
 
-editor/display_folded = true
+script = ExtResource( 7 )
+initial_state = null
 
 [node name="Idle" type="Node" parent="BodyStateMachine" index="0"]
 
+script = ExtResource( 8 )
+
 [node name="Move" type="Node" parent="BodyStateMachine" index="1"]
+
+script = ExtResource( 9 )
+move_force = 0.0
 
 [node name="Stagger" type="Node" parent="BodyStateMachine" index="2"]
 
 [node name="Dead" type="Node" parent="BodyStateMachine" index="3"]
 
-[node name="Health" type="Node" parent="." index="7"]
+[node name="Health" type="Node" parent="." index="6"]
 
-[node name="Purse" type="Node" parent="." index="8"]
+[node name="Purse" type="Node" parent="." index="7"]
 
 

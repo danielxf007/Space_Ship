@@ -2,7 +2,9 @@
 
 [ext_resource path="res://input_handler/player_input_handler/player_input_handler.gd" type="Script" id=1]
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node" index="0" groups=[
+"world",
+]]
 
 [node name="Node" type="Node" parent="." index="0"]
 
