@@ -128,12 +128,13 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D" index="0"]
 
+rotation = 1.5708
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -205,13 +206,13 @@ script = ExtResource( 31 )
 [node name="Move" type="Node" parent="BodyStateMachine" index="1"]
 
 script = ExtResource( 32 )
-move_force = 0.0
+move_force = 30.0
 
 [node name="Health" type="Node" parent="." index="7"]
 
 [node name="Purse" type="Node" parent="." index="8"]
 
-[connection signal="mouse_position_changed" from="PlayerInputCommunicator" to="." method="update_look_direction"]
+[connection signal="look_direction_changed" from="PlayerInputCommunicator" to="." method="update_look_direction"]
 
 [connection signal="moved" from="PlayerInputCommunicator" to="." method="update_move_direction"]
 
