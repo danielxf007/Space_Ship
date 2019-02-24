@@ -19,7 +19,8 @@ func communicate_movement_input_direction(player_input_data):
 	emit_signal("moved", movement_direction)
 
 func communicate_shoot_input(player_input_data):
-	emit_signal("shooted") 
+	if player_input_data.shoot:
+		emit_signal("shooted") 
 
 func communicate_weapon_type_input(player_input_data):
 	if player_input_data.weapon_type_one:

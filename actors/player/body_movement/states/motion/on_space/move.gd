@@ -23,6 +23,7 @@ func move(direction, delta):
 	calculate_speed(delta)
 	var velocity = direction * speed
 	owner.move_and_slide(velocity)
+	correct_outside_view_bounds()
 
 func calculate_speed(delta):
 	speed += move_force * delta
@@ -30,3 +31,9 @@ func calculate_speed(delta):
 		speed = MAX_SPEED
 	if speed < MIN_SPEED:
 		speed = MIN_SPEED
+
+func correct_outside_view_bounds():
+	if owner.global_position.y > owner.get_viewport().size.y:
+		owner.global_position.y = owner.get_viewport().size.y
+	if owner.global_position.y < 0:
+		owner.global_position.y = 0
