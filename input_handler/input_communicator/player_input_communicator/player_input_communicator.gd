@@ -1,6 +1,7 @@
 extends "res://input_handler/input_communicator/input_communicator.gd"
 signal moved(move_direction)
 signal weapon_changed(weapon_name)
+signal mouse_position_changed(mouse_position)
 signal talked(talk)
 signal saved(save)
 signal shooted()
@@ -9,6 +10,7 @@ func communicate_input(player_input):
 	communicate_movement_input_direction(player_input)
 	communicate_weapon_type_input(player_input)
 	communicate_shoot_input(player_input)
+	communicate_mouse_position(player_input)
 
 func communicate_movement_input_direction(player_input_data):
 	var movement_direction = Vector2()
@@ -32,6 +34,10 @@ func communicate_weapon_type_input(player_input_data):
 	if player_input_data.weapon_type_four:
 		emit_signal("weapon_changed", "weapon_type_four")
 		return
+
+func communicate_mouse_position(player_input_data):
+	var mouse_position = player_input_data.mouse_position
+	emit_signal("mouse_position_changed", mouse_position)
 
 func communicate_save_input(player_input_data):
 	return

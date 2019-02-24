@@ -1,5 +1,5 @@
 extends Node
-signal finished (next_state)
+signal finished(next_state)
 
 func enter():
 	return

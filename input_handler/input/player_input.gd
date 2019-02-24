@@ -11,3 +11,4 @@ var weapon_type_three
 var weapon_type_four
 var save
 var talk
+var mouse_position

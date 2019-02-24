@@ -19,3 +19,4 @@ func get_input():
 	player_input_data.weapon_type_four = Input.is_action_pressed("weapon_type_4")
 	player_input_data.save = Input.is_action_pressed("save")
 	player_input_data.talk = Input.is_action_pressed("talk")
+	player_input_data.mouse_position = owner.get_global_mouse_position()
