@@ -36,6 +36,6 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 400, 400 )
+position = Vector2( 511.271, 304.183 )
 
 
