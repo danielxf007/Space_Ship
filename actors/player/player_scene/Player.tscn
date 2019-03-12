@@ -159,35 +159,8 @@ anims/move = SubResource( 4 )
 anims/stagger = SubResource( 5 )
 blend_times = [  ]
 
-[node name="Camera2D" type="Camera2D" parent="." index="3"]
+[node name="Weapon" type="Position2D" parent="." index="3"]
 
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.3
-drag_margin_top = 1.0
-drag_margin_right = 0.3
-drag_margin_bottom = 1.0
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = true
-_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
-
-[node name="Weapon" type="Position2D" parent="." index="4"]
-
-editor/display_folded = true
 position = Vector2( 35, -1.5 )
 script = ExtResource( 26 )
 _sections_unfolded = [ "Transform" ]
@@ -211,15 +184,15 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="PlayerInputCommunicator" type="Node" parent="." index="5"]
+[node name="PlayerInputCommunicator" type="Node" parent="." index="4"]
 
 script = ExtResource( 28 )
 
-[node name="InputHandler" type="Node" parent="." index="6"]
+[node name="InputHandler" type="Node" parent="." index="5"]
 
 script = ExtResource( 29 )
 
-[node name="BodyStateMachine" type="Node" parent="." index="7"]
+[node name="BodyStateMachine" type="Node" parent="." index="6"]
 
 script = ExtResource( 30 )
 initial_state = NodePath("Idle")
@@ -231,11 +204,11 @@ script = ExtResource( 31 )
 [node name="Move" type="Node" parent="BodyStateMachine" index="1"]
 
 script = ExtResource( 32 )
-move_force = 30.0
+move_force = 100.0
 
-[node name="Health" type="Node" parent="." index="8"]
+[node name="Health" type="Node" parent="." index="7"]
 
-[node name="Purse" type="Node" parent="." index="9"]
+[node name="Purse" type="Node" parent="." index="8"]
 
 [connection signal="moved" from="PlayerInputCommunicator" to="." method="update_move_direction"]
 

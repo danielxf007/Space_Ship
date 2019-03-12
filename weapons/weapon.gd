@@ -5,10 +5,8 @@ var shoot_down_cool_down_timer
 var reload_cool_down_timer
 var weapon_information
 var world
-var player_camera
 
 func _ready():
-	player_camera = owner.get_node("Camera2D")
 	weapon_information = $WeaponInformation
 	shoot_down_cool_down_timer = $ShootCoolDown
 	reload_cool_down_timer = $ReloadCoolDown
@@ -31,7 +29,6 @@ func shoot():
 	new_projectile.global_position = global_position
 	new_projectile.add_collision_exception_with(owner)
 	new_projectile.set_move_direction(owner.look_direction)
-	new_projectile.set_player_camera(player_camera)
 	world.add_child(new_projectile)
 
 func reload():
