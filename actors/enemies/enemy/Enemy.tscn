@@ -2,7 +2,7 @@
 
 [ext_resource path="res://actors/enemies/enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://weapons/weapon.gd" type="Script" id=2]
-[ext_resource path="res://weapons/weapon_information.gd" type="Script" id=3]
+[ext_resource path="res://weapons/weapon_information_enemies.gd" type="Script" id=3]
 [ext_resource path="res://actors/player/body_movement/body_state_machine/body_state_machine.gd" type="Script" id=4]
 [ext_resource path="res://actors/player/body_movement/states/motion/on_space/idle.gd" type="Script" id=5]
 [ext_resource path="res://actors/player/body_movement/states/motion/on_space/move.gd" type="Script" id=6]
