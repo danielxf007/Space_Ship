@@ -65,6 +65,8 @@ tracks/0/keys = {
 
 [node name="RedBomb" instance=ExtResource( 1 )]
 
+speed = 600.0
+
 [node name="Body" parent="." index="0"]
 
 scale = Vector2( 0.125, 0.125 )

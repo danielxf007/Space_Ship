@@ -60,7 +60,6 @@ tracks/0/keys = {
 [node name="BlueProjectile" instance=ExtResource( 1 )]
 
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform" ]
 speed = 600.0
 
 [node name="Body" parent="." index="0"]

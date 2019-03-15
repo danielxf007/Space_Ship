@@ -123,7 +123,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 19 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 2
@@ -205,6 +205,7 @@ script = ExtResource( 31 )
 
 script = ExtResource( 32 )
 move_force = 100.0
+is_player = true
 
 [node name="Health" type="Node" parent="." index="7"]
 
@@ -213,6 +214,8 @@ move_force = 100.0
 [connection signal="moved" from="PlayerInputCommunicator" to="." method="update_move_direction"]
 
 [connection signal="shooted" from="PlayerInputCommunicator" to="Weapon" method="shoot"]
+
+[connection signal="weapon_changed" from="PlayerInputCommunicator" to="Weapon" method="change_weapon"]
 
 [connection signal="got_input" from="InputHandler" to="PlayerInputCommunicator" method="communicate_input"]
 
