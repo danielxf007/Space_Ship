@@ -64,10 +64,10 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
-[node name="RedProjectile" instance=ExtResource( 1 )]
+[node name="RedProjectile" index="0" instance=ExtResource( 1 )]
 
 rotation = -1.5708
-_sections_unfolded = [ "Collision", "Transform" ]
+collision_mask = 83
 speed = 600.0
 
 [node name="Body" parent="." index="0"]

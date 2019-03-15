@@ -57,9 +57,10 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
-[node name="BlueProjectile" instance=ExtResource( 1 )]
+[node name="BlueProjectile" index="0" instance=ExtResource( 1 )]
 
 rotation = 1.5708
+collision_mask = 213
 speed = 600.0
 
 [node name="Body" parent="." index="0"]
