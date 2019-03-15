@@ -57,8 +57,8 @@ func outside_view_bounds_enemy():
 	var enemy_position = owner.global_position
 	var enemy_body_scale = owner.get_node("Body").scale 
 	var enemy_size = owner.get_node("Body").texture.get_size()
-	enemy_size.y = player_size.y * player_body_scale.y
-	enemy_size.x = player_size.x * player_body_scale.x
+	enemy_size.y = enemy_size.y * enemy_body_scale.y
+	enemy_size.x = enemy_size.x * enemy_body_scale.x
 	if enemy_position.y + enemy_size.y / 2 > game_screen.y:
 		owner.global_position.y = game_screen.y - enemy_size.y / 2
 	if enemy_position.y - enemy_size.y / 2 < 0:
