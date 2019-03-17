@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://world/moving_images/moving_image/MovingImage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/background/starfield.png" type="Texture" id=2]
+
+[node name="StarField" index="0" instance=ExtResource( 1 )]
+
+scale = Vector2( 0.571375, 0.569387 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+speed = 50.0
+
+

@@ -19,6 +19,7 @@ extents = Vector2( 30.2094, 32.9749 )
 position = Vector2( 573.096, 299.569 )
 scale = Vector2( 0.650743, 0.597581 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 speed = 100.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
