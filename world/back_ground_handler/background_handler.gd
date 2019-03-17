@@ -4,26 +4,26 @@ var first_image
 var second_image 
 
 func _ready():
-	first_image = $Images.star_field.instace()
-	second_image = $Images.star_field.instace()
-	positionate_image(first_image)
-	positionate_image(second_image)
+	first_image = create_image()
+	second_image = create_image()
+	positionate_first_image(first_image)
+	positionate_second_image(second_image)
 	$Timer.wait_time = calculate_time_on_screen(first_image)
 
 func _physics_process(delta):
-	if $Timer.stop():
-		update_background()
-	else:
-		move_images(delta)
+	move_images(delta)
 
 func move_images(delta):
-	first_image.move(delta)
-	second_image.move(delta)
+	if first_image.out_side_game_screen:
+		update_background()
+	else:
+		first_image.move(delta)
+		second_image.move(delta)
 
 func calculate_time_on_screen(image):
 	var image_speed = image.speed
 	var image_tale_position = get_image_tale_position(image)
-	var time = image_tale_position / image_speed
+	var time = image_tale_position.x / image_speed
 	return time
 
 func get_image_tale_position(image):
@@ -48,16 +48,19 @@ func positionate_second_image(image):
 
 func update_background():
 	update_first_image()
-	update_second_image()
-	$Timer.start()
-
-func update_first_image():
-	first_image = second_image
-
-func update_second_image():
-	second_image = create_image()
 	positionate_second_image(second_image)
 
+func update_first_image():
+	var aux = second_image
+	second_image = first_image
+	first_image = aux
+	second_image.out_side_game_screen = false
+
+func update_second_image():
+	return
+
 func create_image():
-	return $Images.star_field.instance()
+	var image = $Images.star_field.instance()
+	add_child(image)
+	return image
 

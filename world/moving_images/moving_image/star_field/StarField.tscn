@@ -5,7 +5,8 @@
 
 [node name="StarField" index="0" instance=ExtResource( 1 )]
 
-scale = Vector2( 0.571375, 0.569387 )
+position = Vector2( 238.682, 0 )
+scale = Vector2( 0.820002, 0.569387 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 speed = 50.0
