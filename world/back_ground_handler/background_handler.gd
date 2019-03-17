@@ -8,8 +8,13 @@ func _ready():
 	second_image = $Images.star_field.instace()
 	positionate_image(first_image)
 	positionate_image(second_image)
-	calculate_time_on_screen(first_image)
+	$Timer.wait_time = calculate_time_on_screen(first_image)
 
+func _physics_process(delta):
+	if $Timer.stop():
+		update_background()
+	else:
+		move_images(delta)
 
 func move_images(delta):
 	first_image.move(delta)
@@ -41,8 +46,18 @@ func positionate_second_image(image):
 	center.x = center.x + first_image_size_x
 	image.global_position = center
 
-func update_first_image():
-	pass
-
-func _on_Timer_timeout():
+func update_background():
 	update_first_image()
+	update_second_image()
+	$Timer.start()
+
+func update_first_image():
+	first_image = second_image
+
+func update_second_image():
+	second_image = create_image()
+	positionate_second_image(second_image)
+
+func create_image():
+	return $Images.star_field.instance()
+

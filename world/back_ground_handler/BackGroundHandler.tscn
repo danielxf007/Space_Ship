@@ -18,6 +18,4 @@ autostart = false
 
 script = ExtResource( 2 )
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-
 
