@@ -15,5 +15,8 @@ func cancel_manufacture(good_name, quantity):
 func add_to_manufacture_queue(good_name):
 	pass
 
-func get_manufacture_queue(queue):
+func create_manufacture_queue(queue):
+	pass
+
+func consult_blue_prints(good_name):
 	pass
