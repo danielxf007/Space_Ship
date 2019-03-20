@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Factory" type="Node" index="0"]
+
+[node name="BluePrints" type="Node" parent="." index="0"]
+
+[node name="ProductionTime" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="RestTime" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+
