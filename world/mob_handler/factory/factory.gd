@@ -10,4 +10,4 @@ func set_manufacture_queue(queue):
 	manufacture_queue = queue
 
 func set_manufacture_instructions(instructions):
-	pass
+	manufacture_instructions = instructions
