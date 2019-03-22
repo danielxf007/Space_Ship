@@ -17,6 +17,6 @@ var production_time = {
 var dispatch_time = {
 	"SmallRedShip": 2,
 	"RedShip": 3,
-	"GrayAsteroid": 1,
-	"AsteroidBrow": 1,
-	"AsteroidDark": 1}
+	"GrayAsteroid": 4,
+	"AsteroidBrow": 5,
+	"AsteroidDark": 6}

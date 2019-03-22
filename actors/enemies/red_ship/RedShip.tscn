@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://actors/enemies/enemy/Enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://art/Spaceship_art_pack_larger/Red/Enemy_animation/1.png" type="Texture" id=2]
+[ext_resource path="res://art/Spaceship_art_pack_larger/Red/Enemy_animation/2.png" type="Texture" id=2]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Effects/Red Explosion/1_0.png" type="Texture" id=3]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Effects/Red Explosion/1_1.png" type="Texture" id=4]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Effects/Red Explosion/1_2.png" type="Texture" id=5]
@@ -19,7 +19,7 @@
 [ext_resource path="res://art/Spaceship_art_pack_larger/Effects/Red Explosion/1_14.png" type="Texture" id=17]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Effects/Red Explosion/1_15.png" type="Texture" id=18]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Effects/Red Explosion/1_16.png" type="Texture" id=19]
-[ext_resource path="res://art/Spaceship_art_pack_larger/Red/Enemy_animation/2.png" type="Texture" id=20]
+[ext_resource path="res://art/Spaceship_art_pack_larger/Red/Enemy_animation/1.png" type="Texture" id=20]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Red/Enemy_animation/3.png" type="Texture" id=21]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Red/Enemy_animation/4.png" type="Texture" id=22]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Red/Enemy_animation/5.png" type="Texture" id=23]
@@ -65,7 +65,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
+"values": [ ExtResource( 20 ), ExtResource( 2 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -83,7 +83,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
+"values": [ ExtResource( 20 ), ExtResource( 2 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
 }
 
 [sub_resource type="Animation" id=5]

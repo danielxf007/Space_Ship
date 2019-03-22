@@ -19,12 +19,12 @@
 [ext_resource path="res://art/Spaceship_art_pack_larger/Effects/Red Explosion/1_15.png" type="Texture" id=17]
 [ext_resource path="res://art/Spaceship_art_pack_larger/Effects/Red Explosion/1_16.png" type="Texture" id=18]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=7]
 
 custom_solver_bias = 0.0
 radius = 28.4619
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=8]
 
 length = 0.75
 loop = false
@@ -42,7 +42,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=9]
 
 length = 0.01
 loop = false
@@ -60,7 +60,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=10]
 
 length = 0.01
 loop = false
@@ -112,14 +112,14 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 0, -2 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" parent="." index="2"]
 
-anims/die = SubResource( 2 )
-anims/idle = SubResource( 3 )
-anims/move = SubResource( 4 )
+anims/die = SubResource( 8 )
+anims/idle = SubResource( 9 )
+anims/move = SubResource( 10 )
 anims/stagger = SubResource( 5 )
 
 [node name="Move" parent="BodyMovement" index="1"]

@@ -6,7 +6,7 @@
 [ext_resource path="res://world/mob_handler/factory/states/manufacture.gd" type="Script" id=4]
 [ext_resource path="res://world/mob_handler/factory/states/dispatch.gd" type="Script" id=5]
 
-[node name="Factory" type="Node" index="0"]
+[node name="Factory" type="Node"]
 
 script = ExtResource( 1 )
 

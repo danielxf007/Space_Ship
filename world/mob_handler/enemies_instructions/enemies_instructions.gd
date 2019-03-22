@@ -1,11 +1,12 @@
 extends Node
 
-var names = ["SmallRedShip", "RedShip", "GrayAsteroid", "AsteroidBrow",
-"AsteroidDark"]
+var names = ["SmallRedShip", "RedShip"]
 
 var quantity = {
 	"SmallRedShip": 10,
 	"RedShip": 8,
-	"GrayAsteroid": 20,
-	"AsteroidBrow": 20,
-	"AsteroidDark": 15} 
+} 
+#	"GrayAsteroid",, , "AsteroidBrow",
+#"AsteroidDark"
+#	"AsteroidBrow": 20,
+#	"AsteroidDark": 15
