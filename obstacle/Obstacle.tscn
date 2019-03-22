@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://obstacle/obstacle.gd" type="Script" id=1]
+[ext_resource path="res://health/health.gd" type="Script" id=2]
 
 [node name="Obstacle" type="KinematicBody2D" index="0"]
 
@@ -9,6 +10,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+damage = 20
 move_force = 100.0
 
 [node name="Body" type="Sprite" parent="." index="0"]
@@ -25,5 +27,34 @@ playback_speed = 1.0
 blend_times = [  ]
 
 [node name="Health" type="Node" parent="." index="3"]
+
+script = ExtResource( 2 )
+max_health = 50
+
+[node name="DamageZone" type="Area2D" parent="." index="4"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 4
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" index="0"]
+
+[node name="DeathTime" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="body_entered" from="DamageZone" to="." method="_on_DamageZone_body_entered"]
+
+[connection signal="timeout" from="DeathTime" to="." method="_on_DeathTime_timeout"]
 
 

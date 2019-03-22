@@ -1,6 +1,6 @@
 extends Node
 
-export(int) var max_health = 20
+export(int) var max_health = 50
 var health = 0
 
 func _ready():

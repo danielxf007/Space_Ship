@@ -19,6 +19,7 @@ func set_dead(value):
 	set_physics_process(not value)
 	$CollisionShape2D.disabled = value
 	$AnimationPlayer.play("dead")
+	$DamageZone/CollisionShape2D.disabled = value
 	$DeathTime.start()
 
 func _on_DeathTime_timeout():

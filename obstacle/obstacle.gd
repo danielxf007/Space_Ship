@@ -2,12 +2,33 @@ extends KinematicBody2D
 
 const MAX_SPEED = 250.0
 const MIN_SPEED = 150.0
+export(int) var damage = 20
 export(float) var move_force = 100.0
 var move_direction = Vector2(-1, 0)
 var speed
 
 func _physics_process(delta):
 	move(move_direction, delta)
+
+func take_damage(amount):
+	health.take_damage(amount)
+
+func set_dead(value):
+	set_process_input(not value)
+	set_physics_process(not value)
+	$CollisionShape2D.disabled = value
+	$AnimationPlayer.play("dead")
+	$DamageZone/CollisionShape2D.disabled = value
+	$DeathTime.start()
+
+func _on_DeathTime_timeout():
+	queue_free()
+
+
+func _on_DamageZone_body_entered(body):
+	if body.has_method("take_damage"):
+		body.take_damage(damage)
+		set_dead(true)
 
 func move(direction, delta):
 	calculate_speed(delta)
