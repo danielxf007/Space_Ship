@@ -11,6 +11,3 @@ func update():
 
 func dispatch_goods():
 	pass
-
-func consult_blue_prints(good_name):
-	pass

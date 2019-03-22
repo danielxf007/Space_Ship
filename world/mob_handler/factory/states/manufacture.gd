@@ -1,7 +1,7 @@
 extends "res://world/mob_handler/factory/states/state.gd"
 
 var goods_quantity
-var blue_prints
+
 
 func enter():
 	return
@@ -12,20 +12,18 @@ func exit():
 func update():
 	return
 
-func manufacture_good(good_name):
+func manufacture_good():
 	if $ProductionTime.stop():
-		var model = consult_blue_prints(good_name)
+		var model = owner.manufacture_queue.pop_front()
 		if model != null:
 			$ProductionTime.start()
 			var good = model.instance()
 			owner.finished_goods.push_back(good)
 			goods_quantity -= 1
 
-func consult_blue_prints(good_name):
-	return blue_prints[good_name]
 
 func production_finished():
-	pass
+	return goods_quantity <= 0
 
 func interrupt_production():
-	pass
+	emit_signal("finished", "Stop")

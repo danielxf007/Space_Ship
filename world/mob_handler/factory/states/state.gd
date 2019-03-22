@@ -10,6 +10,3 @@ func exit():
 
 func update():
 	return
-
-func consult_blue_prints(good_name):
-	pass
