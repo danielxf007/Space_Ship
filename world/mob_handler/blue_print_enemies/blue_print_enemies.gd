@@ -6,17 +6,17 @@ var good = {
 	"GrayAsteroid": preload("res://actors/enemies/gray_asteroid/GrayAsteroid.tscn"),
 	"AsteroidBrow": preload("res://actors/enemies/asteroid_brow/AsteroidBrow.tscn"),
 	"AsteroidDark": preload("res://actors/enemies/asteroid_dark/AsteroidDark.tscn")}
-	
+
 var production_time = {
-	"SmallRedShip": 2.0,
-	"RedShip": 3.0,
-	"GrayAsteroid": 1.0,
-	"AsteroidBrow": 1.0,
-	"AsteroidDark": 1.0}
-	
+	"SmallRedShip": 0.1,
+	"RedShip": 0.3,
+	"GrayAsteroid": 0.1,
+	"AsteroidBrow": 0.1,
+	"AsteroidDark": 0.1}
+
 var dispatch_time = {
-	"SmallRedShip": 2.0,
-	"RedShip": 3.0,
-	"GrayAsteroid": 1.0,
-	"AsteroidBrow": 1.0,
-	"AsteroidDark": 1.0}
+	"SmallRedShip": 2,
+	"RedShip": 3,
+	"GrayAsteroid": 1,
+	"AsteroidBrow": 1,
+	"AsteroidDark": 1}

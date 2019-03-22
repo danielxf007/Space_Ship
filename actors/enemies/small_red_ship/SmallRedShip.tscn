@@ -119,6 +119,10 @@ anims/stagger = SubResource( 5 )
 position = Vector2( -37, 0 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Move" parent="BodyMovement" index="1"]
+
+move_force = 100.0
+
 [node name="DamageZone" parent="." index="8"]
 
 editor/display_folded = false

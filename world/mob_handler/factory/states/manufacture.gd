@@ -5,25 +5,27 @@ var instructions
 
 func enter():
 	instructions = owner.manufacture_instructions
-	blue_prints = instructions.blue_prints
+	blue_prints = owner.blue_prints
+	print($ProductionTime.is_stopped())
 
 func exit():
 	return
 
 func update():
 	if production_finished():
-		emit_signal("finished", "dispatch")
+		emit_signal("finished", "Dispatch")
 	else:
 		manufacture_good()
 
 func manufacture_good():
-	if $ProductionTime.stop():
-		var model = owner.manufacture_queue.pop_front()
-		if model != null:
-			var good = model.instance()
-			$ProductionTime.wait_time = consult_blue_prints(good.name)
-			$ProductionTime.start()
-			owner.finished_goods.push_back(good)
+	if not $ProductionTime.is_stopped():
+		return
+	var model = owner.manufacture_queue.pop_front()
+	if model != null:
+		var good = model.instance()
+		$ProductionTime.wait_time = consult_blue_prints(good.name)
+		$ProductionTime.start()
+		owner.finished_goods.push_back(good)
 
 
 func production_finished():

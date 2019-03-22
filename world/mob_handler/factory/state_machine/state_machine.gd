@@ -29,7 +29,7 @@ func set_active(value):
 		current_state = null
 
 func _physics_process(delta):
-	current_state.update(delta)
+	current_state.update()
 
 func _change_state(state_name):
 	if not _active:

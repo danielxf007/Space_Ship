@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://world/mob_handler/mob_handler.gd" type="Script" id=1]
+[ext_resource path="res://world/mob_handler/factory/Factory.tscn" type="PackedScene" id=2]
+
+[node name="MobHandler" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Factory" parent="." index="0" instance=ExtResource( 2 )]
+
+[connection signal="manufacture_finished" from="Factory" to="." method="_on_Factory_manufacture_finished"]
+
+

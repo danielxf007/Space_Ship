@@ -2,11 +2,12 @@ extends "res://world/mob_handler/factory/states/state.gd"
 
 var blue_prints
 var instructions 
+
 func enter():
+	instructions = owner.manufacture_instructions
+	blue_prints = owner.blue_prints
 	create_finished_goods_queue()
 	create_manufacture_queue()
-	instructions = owner.manufacture_instructions
-	blue_prints = instructions.blue_prints
 
 
 func exit():
@@ -37,7 +38,7 @@ func create_manufacture_queue():
 
 func create_finished_goods_queue():
 	var new_queue = []
-	owner.finished_goods(new_queue)
+	owner.finished_goods = new_queue
 	
 func consult_blue_prints(good_name):
 	var good = blue_prints.good

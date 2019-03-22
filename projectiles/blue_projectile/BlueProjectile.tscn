@@ -16,8 +16,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 1.64769
-height = 5.07573
+radius = 3.78265
+height = 12.8141
 
 [sub_resource type="Animation" id=2]
 
@@ -57,7 +57,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
-[node name="BlueProjectile" index="0" instance=ExtResource( 1 )]
+[node name="BlueProjectile" instance=ExtResource( 1 )]
 
 rotation = 1.5708
 collision_mask = 213
@@ -65,7 +65,7 @@ speed = 600.0
 
 [node name="Body" parent="." index="0"]
 
-scale = Vector2( 0.125, 0.125 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
