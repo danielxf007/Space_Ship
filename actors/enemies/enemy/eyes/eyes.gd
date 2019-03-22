@@ -11,8 +11,6 @@ func _ready():
 	var visibility = owner.get_node("Visibility")
 	visibility.get_node("CollisionShape2D").shape = shape
 
-func _draw():
-	draw_circle(Vector2(), detect_radius, vis_color)
 
 func _on_Visibility_body_entered(body):
 	if target != null or body.name != "Player":
