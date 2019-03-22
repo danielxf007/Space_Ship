@@ -1,6 +1,7 @@
 extends "res://world/mob_handler/factory/states/state.gd"
 
 var goods_quantity
+var blue_prints
 
 func enter():
 	return
@@ -21,7 +22,7 @@ func manufacture_good(good_name):
 			goods_quantity -= 1
 
 func consult_blue_prints(good_name):
-	pass
+	return blue_prints[good_name]
 
 func production_finished():
 	pass
