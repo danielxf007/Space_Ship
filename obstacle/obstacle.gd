@@ -5,7 +5,8 @@ const MIN_SPEED = 150.0
 export(int) var damage = 20
 export(float) var move_force = 100.0
 var move_direction = Vector2(-1, 0)
-var speed
+var speed = 0.0
+onready var health = $Health
 
 func _physics_process(delta):
 	move(move_direction, delta)
