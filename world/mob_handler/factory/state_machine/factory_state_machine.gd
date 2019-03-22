@@ -4,7 +4,8 @@ func _ready():
 	states_map = {
 		"Manufacture" : $Manufacture,
 		"Stop" : $Stop,
-		"Dispatch": $Dispatch
+		"Dispatch": $Dispatch,
+		"Organize": $Organize
 	}
 
 func _change_state(state_name):

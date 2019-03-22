@@ -123,12 +123,12 @@ _sections_unfolded = [ "Transform" ]
 
 move_force = 100.0
 
-[node name="DamageZone" parent="." index="8"]
-
-editor/display_folded = false
-
 [node name="CollisionShape2D" parent="DamageZone" index="0"]
 
 shape = SubResource( 6 )
+
+[node name="DeathTime" parent="." index="10"]
+
+wait_time = 0.8
 
 

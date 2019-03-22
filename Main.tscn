@@ -4,7 +4,7 @@
 [ext_resource path="res://world/mob_handler/MobHandler.tscn" type="PackedScene" id=2]
 [ext_resource path="res://actors/player/player_scene/Player.tscn" type="PackedScene" id=3]
 
-[node name="Main" type="Node" groups=[
+[node name="Main" type="Node" index="0" groups=[
 "world",
 ]]
 
@@ -15,5 +15,7 @@
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 511.271, 304.183 )
+
+[connection signal="dead" from="Player" to="MobHandler" method="_on_Player_dead"]
 
 

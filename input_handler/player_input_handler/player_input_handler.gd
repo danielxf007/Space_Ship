@@ -20,3 +20,11 @@ func get_input():
 	player_input_data.save = Input.is_action_pressed("save")
 	player_input_data.talk = Input.is_action_pressed("talk")
 	player_input_data.position = owner.global_position
+
+func activate_input():
+	set_physics_process(true)
+	set_process_input(true)
+
+func desactivate_input():
+	set_physics_process(false)
+	set_process_input(false)

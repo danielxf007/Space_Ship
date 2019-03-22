@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://actors/enemies/enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://weapons/weapon.gd" type="Script" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://actors/player/body_movement/states/motion/on_space/idle.gd" type="Script" id=5]
 [ext_resource path="res://actors/player/body_movement/states/motion/on_space/move.gd" type="Script" id=6]
 [ext_resource path="res://actors/enemies/enemy/eyes/eyes.gd" type="Script" id=7]
+[ext_resource path="res://health/health.gd" type="Script" id=8]
 
-[node name="Enemy" type="KinematicBody2D" index="0"]
+[node name="Enemy" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 4
@@ -16,6 +17,7 @@ collision_mask = 2
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+damage = 20
 
 [node name="Body" type="Sprite" parent="." index="0"]
 
@@ -86,13 +88,23 @@ is_player = false
 [node name="Eyes" type="Node2D" parent="." index="6"]
 
 script = ExtResource( 7 )
-detect_radius = 100
+detect_radius = 1000
+
+[node name="RayCast2D" type="RayCast2D" parent="Eyes" index="0"]
+
+position = Vector2( 0, -2 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -1000, 0 )
+collision_mask = 2
 
 [node name="Health" type="Node" parent="." index="7"]
 
+script = ExtResource( 8 )
+max_health = 20
+
 [node name="DamageZone" type="Area2D" parent="." index="8"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -115,5 +127,20 @@ editor/display_folded = true
 [node name="Decisions" type="Node" parent="DecisionTree" index="1"]
 
 [node name="Actions" type="Node" parent="DecisionTree" index="2"]
+
+[node name="DeathTime" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="body_entered" from="Visibility" to="Eyes" method="_on_Visibility_body_entered"]
+
+[connection signal="body_exited" from="Visibility" to="Eyes" method="_on_Visibility_body_exited"]
+
+[connection signal="body_entered" from="DamageZone" to="." method="_on_DamageZone_body_entered"]
+
+[connection signal="timeout" from="DeathTime" to="." method="_on_DeathTime_timeout"]
 
 
