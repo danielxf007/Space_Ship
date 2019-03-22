@@ -41,4 +41,6 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
+[connection signal="finished_good" from="StateMachine/Dispatch" to="." method="_on_Dispatch_finished_good"]
+
 
